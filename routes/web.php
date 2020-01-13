@@ -12,8 +12,10 @@
 Route::get('/', 'PagesContoller@index');
 */
 
+Route::get('/', function(){
+    return redirect('/games');
+});
 
-
-Route::resource('/', 'GamesController');
+Route::resource('games', 'GamesController');
 
 

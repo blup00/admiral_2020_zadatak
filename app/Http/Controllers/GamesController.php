@@ -48,7 +48,7 @@ class GamesController extends Controller
         $game->game_type_id = $request->input('type');
         $game->save();
 
-        return redirect('/')->with('success', 'Game created');
+        return redirect('/games')->with('success', 'Game created');
     }
 
     /**
@@ -95,6 +95,6 @@ class GamesController extends Controller
     {
         $game = Game::find($id);
         $game->delete();
-        return redirect()->route('index')->with('success', 'Game Removed');
+        return redirect('/games')->with('success', 'Game Removed');
     }
 }
